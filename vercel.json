@@ -2,11 +2,17 @@
   "version": 2,
   "builds": [
     { "src": "view/css/**/*.css", "use": "@vercel/static" },
+    { "src": "view/img/**/*", "use": "@vercel/static" },
     { "src": "control/**/*.js", "use": "@vercel/static" },
     { "src": "modules/**/*.js", "use": "@vercel/static" },
-    { "src": "view/img/**/*", "use": "@vercel/static" }
+    { "src": "view/template/**/*.html", "use": "@vercel/static" }
   ],
-  "cleanUrls": true,
-  "trailingSlash": false
+  "routes": [
+    { "src": "/", "dest": "view/template/index.html" },
+    { "src": "/css/(.*)", "dest": "view/css/$1" },
+    { "src": "/img/(.*)", "dest": "view/img/$1" },
+    { "src": "/control/(.*)", "dest": "control/$1" },
+    { "src": "/modules/(.*)", "dest": "modules/$1" }
+  ]
 }
 
