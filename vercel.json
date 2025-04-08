@@ -1,0 +1,11 @@
+{
+  "builds": [
+    { "src": "view/css/**/*.css", "use": "@vercel/static" },
+    { "src": "control/**/*.js", "use": "@vercel/static" },
+    { "src": "modules/**/*.js", "use": "@vercel/static" },
+    { "src": "view/img/**/*", "use": "@vercel/static" }
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false
+}
+
